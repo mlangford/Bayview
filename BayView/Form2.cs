@@ -248,5 +248,12 @@ namespace BayView
             lbFeedback.Visible = false;
             timer1.Stop();
         }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            Form3 frm3 = new Form3(conString, Convert.ToInt32(cbFind.SelectedValue), 
+                                                        tbLN.Text + ", "+ tbFN.Text + " " + cbTitle.Text);
+            frm3.ShowDialog();
+        }
     }
 }

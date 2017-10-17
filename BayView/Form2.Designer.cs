@@ -73,7 +73,7 @@
             this.btnAdd.Location = new System.Drawing.Point(742, 300);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(86, 71);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add New\r\nCustomer";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -250,7 +250,7 @@
             this.btnFind.Location = new System.Drawing.Point(742, 40);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(86, 71);
-            this.btnFind.TabIndex = 28;
+            this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find a\r\nCustomer";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -264,13 +264,14 @@
             this.btnBook.TabIndex = 29;
             this.btnBook.Text = "Place a\r\nBooking";
             this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // btnQuit
             // 
             this.btnQuit.Location = new System.Drawing.Point(742, 394);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(86, 28);
-            this.btnQuit.TabIndex = 30;
+            this.btnQuit.TabIndex = 4;
             this.btnQuit.Text = "Close";
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
@@ -283,7 +284,7 @@
             this.lbFeedback.Location = new System.Drawing.Point(124, 15);
             this.lbFeedback.Name = "lbFeedback";
             this.lbFeedback.Size = new System.Drawing.Size(114, 25);
-            this.lbFeedback.TabIndex = 31;
+            this.lbFeedback.TabIndex = 0;
             this.lbFeedback.Text = "lbFeedback";
             this.lbFeedback.Visible = false;
             // 
@@ -297,7 +298,7 @@
             this.cbFind.Location = new System.Drawing.Point(464, 40);
             this.cbFind.Name = "cbFind";
             this.cbFind.Size = new System.Drawing.Size(261, 24);
-            this.cbFind.TabIndex = 32;
+            this.cbFind.TabIndex = 1;
             this.cbFind.SelectedIndexChanged += new System.EventHandler(this.cbFind_SelectedIndexChanged);
             this.cbFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbFind_KeyPress);
             // 
