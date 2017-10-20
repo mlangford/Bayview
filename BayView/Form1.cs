@@ -273,5 +273,10 @@ namespace BayView
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form4 frm4 = new Form4(@"Data Source=" + db);
+            frm4.ShowDialog();
+        }
     }
 }

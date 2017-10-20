@@ -55,6 +55,7 @@
             this.lbFeedback = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cbFind = new System.Windows.Forms.ComboBox();
+            this.btnDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -302,6 +303,17 @@
             this.cbFind.SelectedIndexChanged += new System.EventHandler(this.cbFind_SelectedIndexChanged);
             this.cbFind.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbFind_KeyPress);
             // 
+            // btnDel
+            // 
+            this.btnDel.Enabled = false;
+            this.btnDel.Location = new System.Drawing.Point(650, 209);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 30;
+            this.btnDel.Text = "delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,6 +321,7 @@
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(872, 473);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.cbFind);
             this.Controls.Add(this.lbFeedback);
             this.Controls.Add(this.btnQuit);
@@ -372,5 +385,6 @@
         private System.Windows.Forms.Label lbFeedback;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox cbFind;
+        private System.Windows.Forms.Button btnDel;
     }
 }

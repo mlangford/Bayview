@@ -49,6 +49,7 @@
             this.btncnl = new System.Windows.Forms.Button();
             this.lbFeedback = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -255,12 +256,23 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(725, 139);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 39);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "#";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(782, 455);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbFeedback);
             this.Controls.Add(this.btncnl);
             this.Controls.Add(this.btnpwd);
@@ -312,6 +324,7 @@
         private System.Windows.Forms.Button btncnl;
         private System.Windows.Forms.Label lbFeedback;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

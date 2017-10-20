@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SQLite;
+using System.Text;
 
 namespace BayView
 {
@@ -46,6 +47,7 @@ namespace BayView
             cbFind.Text = "";
             btnBook.Enabled = false;     //cannot use Book
             btnEdit.Enabled = false;      //cannot use Edit
+            btnDel.Enabled = false;      //cannot use Edit
             btnAdd.Enabled = false;      //cannot use Add
 
             dtSearch.Clear();                 //clear any previous search result
@@ -86,6 +88,7 @@ namespace BayView
             cbFind.Enabled = true;    
             btnBook.Enabled = false;     //cannot use Book
             btnEdit.Enabled = false;      //cannot use Edit
+            btnDel.Enabled = false;
             btnAdd.Enabled = true;       //can use Add
 
             dtSearch.Clear();                //clear any previous search result
@@ -179,6 +182,7 @@ namespace BayView
                         cbFind_SelectedIndexChanged(null, null);
                         btnBook.Enabled = true;
                         btnEdit.Enabled = true;
+                        btnDel.Enabled = true;
                     }
                     else
                     {
@@ -254,6 +258,38 @@ namespace BayView
             Form3 frm3 = new Form3(conString, Convert.ToInt32(cbFind.SelectedValue), 
                                                         tbLN.Text + ", "+ tbFN.Text + " " + cbTitle.Text);
             frm3.ShowDialog();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("BEGIN;\n\r");
+            sb.Append("Update booking Set customerid = 1 Where customerid = @cid;\n\r");
+            sb.Append("Delete From customer Where customerid = @cid;\r\n");
+            sb.Append("COMMIT;");
+
+            try
+            {
+                //delete a customer from the db
+                using (SQLiteConnection dbcon = new SQLiteConnection())
+                {
+                    dbcon.ConnectionString = conString;
+                    using (SQLiteCommand cmd = new SQLiteCommand(sb.ToString(), dbcon))
+                    {
+                        cmd.Parameters.AddWithValue("cid", cbFind.SelectedValue);
+                        dbcon.Open();
+                        cmd.ExecuteNonQuery();
+                        dbcon.Close();
+                    }
+                }
+                showlabel("Customer Deleted From Database", 4000);
+                btnCancel_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                showlabel(ex.Message, 4000);
+            }
+
         }
     }
 }
